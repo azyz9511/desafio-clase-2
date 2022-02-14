@@ -24,17 +24,26 @@ class Usuario{
     }
 
     getBookNames(){
-        let book = [];
+
+        let book =this.libros.map((name)=> name.nombre);
+        console.log(`Los libros favoritos de ${this.nombre} son: ${book}`);
+
+        /*let book = [];
         let books = this.libros;
         for(let i = 0; i < books.length;i++){
             book.push(books[i].nombre);
         }
-        console.log(`Los libros favoritos de ${this.nombre} son: ${book}`);
+        console.log(`Los libros favoritos de ${this.nombre} son: ${book}`);*/
     }
 
 }
 
-const usuario = new Usuario('Juan David','Perez',[{nombre : 'Cien años de soledad', autor : 'Gabriel García Márquez'}],['Perro']);
+const usuario = new Usuario(
+    'Juan David',
+    'Perez',
+    [{nombre : 'Cien años de soledad', autor : 'Gabriel García Márquez'}],
+    ['Perro']
+);
 
 usuario.getFullName();
 usuario.addMascota('Gato');
